@@ -68,8 +68,9 @@ const movieSchema = new mongoose.Schema(
 
     owner: {
       // id пользователя, который сохранил фильм. Обязательное поле.
-      type: mongoose.Schema.Types.ObjectId, // тип - id
+      type: mongoose.Schema.Types.ObjectId,
       required: [true, `Значение ${this.owner} должно быть заполнено.`],
+      reference: 'user',
       ref: 'user',
     },
 
